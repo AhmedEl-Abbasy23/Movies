@@ -28,7 +28,8 @@ class MoviesBloc extends Bloc<MoviesEvents, MoviesState> {
     on<GetTopRatedMoviesEvent>(_getTopRatedMovies);
   }
 
-  FutureOr<void> _getNowPlayingMovies(GetNowPlayingMoviesEvent event, Emitter<MoviesState> emit) async {
+  FutureOr<void> _getNowPlayingMovies(
+      GetNowPlayingMoviesEvent event, Emitter<MoviesState> emit) async {
     final result = await getNowPlayingMoviesUseCase(const NoParameters());
     result.fold(
       (l) => emit(

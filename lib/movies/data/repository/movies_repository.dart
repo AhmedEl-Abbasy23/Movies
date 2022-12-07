@@ -17,8 +17,8 @@ class MoviesRepository extends BaseMoviesRepository {
 
   @override
   Future<Either<Failure, List<Movie>>> getNowPlayingMovies() async {
-    final result = await baseMovieRemoteDataSource.getNowPlayingMovies();
     try {
+      final result = await baseMovieRemoteDataSource.getNowPlayingMovies();
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
@@ -27,8 +27,8 @@ class MoviesRepository extends BaseMoviesRepository {
 
   @override
   Future<Either<Failure, List<Movie>>> getPopularMovies() async {
-    final result = await baseMovieRemoteDataSource.getPopularMovies();
     try {
+      final result = await baseMovieRemoteDataSource.getPopularMovies();
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
@@ -37,8 +37,8 @@ class MoviesRepository extends BaseMoviesRepository {
 
   @override
   Future<Either<Failure, List<Movie>>> getTopRatedMovies() async {
-    final result = await baseMovieRemoteDataSource.getTopRatedMovies();
     try {
+      final result = await baseMovieRemoteDataSource.getTopRatedMovies();
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
@@ -47,8 +47,8 @@ class MoviesRepository extends BaseMoviesRepository {
 
   @override
   Future<Either<Failure, MovieDetail>> getMovieDetails(MovieDetailsParameters parameters) async{
-    final result = await baseMovieRemoteDataSource.getMovieDetails(parameters);
     try {
+      final result = await baseMovieRemoteDataSource.getMovieDetails(parameters);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
@@ -57,8 +57,8 @@ class MoviesRepository extends BaseMoviesRepository {
 
   @override
   Future<Either<Failure, List<RecommendationMovies>>> getRecommendationMovies(RecommendationMoviesParameters parameters) async{
-    final result = await baseMovieRemoteDataSource.getRecommendationMovies(parameters);
     try {
+      final result = await baseMovieRemoteDataSource.getRecommendationMovies(parameters);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.statusMessage));
